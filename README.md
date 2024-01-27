@@ -9,4 +9,4 @@ PS Frajeři vědí, od jaké hudební skupiny je pojmenovaná moje hra  :D
 <h2>Update č.1</h2>
 Můžeme se s naší postavou pohybovat a s měnícím se směrem se mění i směr obrázku
 
-U6 mě bolí hlava z toho přemýšlet, kam přesně to napsat, aby to fungovalo, jak má XD
+Už mě bolí hlava z toho přemýšlet, kam přesně to napsat, aby to fungovalo, jak má XD
