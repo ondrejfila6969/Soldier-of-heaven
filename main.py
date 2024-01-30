@@ -9,10 +9,9 @@ screen = pygame.display.set_mode((WIDTH, HEIGHT))
 pygame.display.set_caption("World War 3")
 
 # <333
-"""
+
 pygame.mixer_music.load("Audio/Soldier Of Heaven.mp3")
 pygame.mixer_music.play()
-"""
 
 # Zpomalení na FPS (snímky za sekundu)
 clocks = pygame.time.Clock()
@@ -29,12 +28,13 @@ class Character(pygame.sprite.Sprite):
         self.speed = speed # Vzdálenost, o kteoru se přemisťuje
         pygame.sprite.Sprite.__init__(self)
         self.direction = 1 # Bude kontrolovat, jestli se hýbeme doleva nebo doprava a podle toho budeme překlápět obrázek
-        self.flip = False 
+        self.flip = False # Hodnota, kterou budeme používat při překlápění obrázku
+        self.animations = []
+        self.animation = 0 # Jaká animace to bude
         image = pygame.image.load(f"Images/{self.imageType}.png") # Obrázek
         self.image = pygame.transform.scale(image, (int(image.get_width() * scale), int(image.get_height() * scale - 20))) # Zmenšení obrázku na požadované rozměry
-        self.rectangle = image.get_rect() # Musím dát pod obrázek rectangle, aby se nepřekryl pozadím
-        self.rectangle.x = posX
-        self.rectangle.y = posY
+        self.rectangle = self.image.get_rect() # Musím dát pod obrázek rectangle, aby se nepřekryl pozadím
+        self.rectangle.center = (posX, posY)
     
     def moveEvent(self, direction_left, direction_right):
         dx = 0 # změna souřadnice x
@@ -54,8 +54,6 @@ class Character(pygame.sprite.Sprite):
     
     def draw(self):
         screen.blit(pygame.transform.flip(self.image, self.flip, False), self.rectangle)
-
-
 # Barva pozadí (Prozatím, později dám do pozadí obrázky atd.) - triggruje mě, jak se mi ten obrázek neustále duplikuje .-.
 bg_color = (0, 0, 0)
 
@@ -70,7 +68,6 @@ programRunning = True
 while programRunning:
     clocks.tick(FPS)
     renderBackground() # Pygame je pain, furt musím přemýšlet, kam to napsat, aby se něco nezkurvilo
-
     soldier.draw()
     soldier.moveEvent(direction_left, direction_right)
     for event in pygame.event.get():
