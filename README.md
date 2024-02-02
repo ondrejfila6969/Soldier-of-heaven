@@ -10,3 +10,7 @@
 
 <h2>Update č.2</h2>
 <p>Menší komplikace při vykreslování obrázku, nyní již vše funguje (ZATÍM :))</p>
+
+
+<h2>Update č.3</h2>
+<p>Lepší organizace kodu, rozvržení do složek</p>
