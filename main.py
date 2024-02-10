@@ -9,9 +9,9 @@ screen = pygame.display.set_mode((WIDTH, HEIGHT))
 pygame.display.set_caption("World War 3")
 
 # <333
-
 pygame.mixer_music.load("Audio/Soldier Of Heaven.mp3")
 pygame.mixer_music.play()
+
 
 # Zpomalení na FPS (snímky za sekundu)
 clocks = pygame.time.Clock()
@@ -23,7 +23,6 @@ direction_right = False
 
 # Barva pozadí pro překrytí obrázku, zabraňuje duplikaci naší postavy
 bg_color = (0, 200, 120)
-
 
 def renderBackground():
     screen.fill(bg_color)

@@ -23,11 +23,11 @@ class Character(pygame.sprite.Sprite):
     def moveEvent(self, direction_left, direction_right):
         dx = 0 # změna souřadnice x
         dy = 0 # změna souřadnice y
-        if direction_left is True:
+        if direction_left:
             dx -= self.speed # Hýbeme se směrem doleva, čímž nám klesá souřadnice x, proto musíme nastavit rychlost na zápornou hodnotu
             self.flip = True
             self.direction = -1
-        if direction_right is True:
+        if direction_right:
             dx += self.speed
             self.flip = False
             self.direction = 1
